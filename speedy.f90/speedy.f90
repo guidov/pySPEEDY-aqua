@@ -46,7 +46,7 @@ contains
         ! Daily tasks
         if (mod(state%current_step, nsteps) == 0) then
             ! Set forcing terms according to date
-            call set_forcing(state, 1, control_params%model_datetime, control_params%tyear)
+            call set_forcing(state, 1, control_params%model_datetime)
         end if
 
         ! Determine whether to compute shortwave radiation on this time step
