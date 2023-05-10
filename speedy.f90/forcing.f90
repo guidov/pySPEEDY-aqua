@@ -12,7 +12,7 @@ module forcing
 contains
     !> Compute forcing fields for the current date and correction terms for
     !  horizontal diffusion
-    subroutine set_forcing(state, imode, model_datetime, tyear)
+    subroutine set_forcing(state, imode, model_datetime)
         use physical_constants, only : refrh1
         use params
         use physical_constants, only : rgas
@@ -29,10 +29,10 @@ contains
 
         integer, intent(in) :: imode !! Mode -> 0 = initialization step, 1 = daily update
         type(Datetime_t), intent(in) :: model_datetime
-        real(p), intent(in) :: tyear !! The fraction of the current year elapsed
 
         real(p), dimension(ix, il) :: corh, tsfc, tref, psfc, qsfc, qref
         real(p) :: gamlat(il)
+        real(p) :: tyear = 0.22 !! The fraction of the current year elapsed
 
         real(p) :: del_co2, pexp
         integer :: i, j, iyear_ref
@@ -49,7 +49,7 @@ contains
 
         ! 2. daily-mean radiative forcing
         ! incoming solar radiation
-        call get_zonal_average_fields(state, tyear)
+        call get_zonal_average_fields(state)
 
         ! total surface albedo
 
