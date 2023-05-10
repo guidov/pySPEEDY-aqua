@@ -76,7 +76,7 @@ contains
         ! Initialization of first time step
         ! =========================================================================
         ! Set up the forcing fields for the first time step
-        call set_forcing(state, 0, control_params%model_datetime, control_params%tyear)
+        call set_forcing(state, 0, control_params%model_datetime)
 
         ! Do the initial (2nd-order) time step, initialize the semi-implicit scheme
         call first_step(state)
