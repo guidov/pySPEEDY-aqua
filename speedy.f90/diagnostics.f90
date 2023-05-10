@@ -58,14 +58,18 @@ contains
 
         ! 3. Stop integration if model variables are out of range
         do k = 1, kx
+            !print*, diag(k, 1)
+            !print*, diag(k, 2)
+            !print*, diag(k, 3)
+
             if ((diag(k, 1) > 500.0) &
                     .or. (diag(k, 2) > 500.0) &
                     .or. (diag(k, 3) < 180.0) &
                     .or. (diag(k, 3) > 320.0)) then
 
-                !print 2001, istep, (diag(kk, 1), kk=1, kx)
-                !print 2002, (diag(kk, 2), kk=1, kx)
-                !print 2003, (diag(kk, 3), kk=1, kx)
+                print*, diag(k, 1)
+                print*, diag(k, 2)
+                print*, diag(k, 3)
                 write(0, *) "Model variables out of accepted range"
                 write(0, *) "step =", state%current_step
                 error_code = E_DIAGNOSTICS_OUTSIDE_RANGE
