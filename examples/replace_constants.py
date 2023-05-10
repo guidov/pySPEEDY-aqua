@@ -27,3 +27,4 @@ if __name__ == "__main__":
 
 # in terminal
 #!cd /home/jovyan/work/pySPEEDY-aqua/ ; make clean ; cd .. ; pip install -v -e ./pySPEEDY-aqua
+# need a kernel restart for changes to take effect; and import pyspeedy again
