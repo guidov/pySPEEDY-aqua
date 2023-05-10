@@ -6,6 +6,9 @@ pySPEEDY
 What is pySPEEDY?
 =================
 
+This is a fork of pySPEEDY with modifications to the boundary conditions and shortwave radiation module.
+New aquaplanet boundary conditions are available and the insolation is set to permanent March 21st conditions (i.e. the sun is over the equator constantly).
+
 pySPEEDY is a fork of the `SPEEDY.f90 <https://github.com/samhatfield/speedy.f90>`__ atmospheric model written
 by `Sam Hatfield <https://samhatfield.co.uk/>`__ that uses a python interface for running and controlling
 the SPEEDY.f90 model.
