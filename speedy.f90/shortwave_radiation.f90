@@ -214,16 +214,16 @@ contains
     end subroutine
 
     !> Compute zonally-averaged fields to be used in the computation of
-    !  short-wave absorption
-    subroutine get_zonal_average_fields(state, tyear)
+    !  short-wave absorption , permenant vernal equinox , march 21
+    subroutine get_zonal_average_fields(state)
         use model_state, only : ModelState_t
 
         type(ModelState_t), intent(inout), target :: state
 
-        real(p), intent(in) :: tyear !! time as fraction of year (0-1, 0 = 1jan.h00)
-
         real(p) :: topsr(il), alpha, azen, coz1, coz2, dalpha, flat2, fs0
         real(p) :: nzen, rzen
+        real(p) :: tyear = 0.22 !! time as fraction of year (0-1, 0 = 1jan.h00)
+
         integer :: j
 
         class(ModGeometry_t), pointer :: mod_geometry
@@ -243,8 +243,8 @@ contains
 
         fs0 = 6.0
 
-        ! Solar radiation at the top
-        call solar(tyear, 4.0 * solc, topsr, mod_geometry%coa, mod_geometry%sia)
+        ! Solar radiation at the top, fixed vernal equinox
+        call solar(4.0 * solc, topsr, mod_geometry%coa, mod_geometry%sia)
 
         do j = 1, il
             flat2 = 1.5 * mod_geometry%sia(j)**2 - 0.5
@@ -273,9 +273,8 @@ contains
     end
 
     ! Average daily flux of solar radiation, from Hartmann (1994)
-    subroutine solar(tyear, csol, topsr, coa, sia)
+    subroutine solar(csol, topsr, coa, sia)
 
-        real(p), intent(in) :: tyear     !! time as fraction of year (0-1, 0 = 1jan.h00)
         real(p), intent(in) :: csol       !! The solar constant [W/m^2]
 
         !> Daily-average insolation at the top of the atmosphere as a function of latitude
@@ -284,6 +283,7 @@ contains
         real(p), intent(in) :: coa(il)    !! cosine(latitude)
         real(p), intent(in) :: sia(il)    !! sine(latitude)
 
+        real(p) :: tyear = 0.22     !! time as fraction of year (0-1, 0 = 1jan.h00)
 
         integer :: j
         real(p) :: ca1, ca2, ca3, cdecl, ch0, csolp, decl, fdis, h0, alpha, pigr, sa1
