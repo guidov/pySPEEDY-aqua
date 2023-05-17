@@ -103,7 +103,7 @@ The next example shows how to run a 1 week simulation using the default boundary
 
   from datetime import datetime
 
-  from pyspeedy import Speedy
+  from pyspeedyaqua import Speedy
 
   # Create an instance of the speedy model.
   model = Speedy(
