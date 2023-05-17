@@ -1,5 +1,5 @@
 
-.. automodule:: pyspeedy
+.. automodule:: pyspeedyaqua
     :members:
     :special-members: __init__
     :imported-members:
