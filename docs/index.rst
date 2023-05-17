@@ -6,7 +6,7 @@
 
     user_guide
     example_gallery
-    pyspeedy_reference
+    pyspeedyaqua_reference
     speedy_f90_reference.rst
 
 

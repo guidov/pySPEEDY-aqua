@@ -6,7 +6,7 @@ pySPEEDY reference
     :maxdepth: 2
     :caption: pySPEEDY modules
 
-    dev_reference/pyspeedy
+    dev_reference/pyspeedyaqua
     dev_reference/callbacks
 
 
