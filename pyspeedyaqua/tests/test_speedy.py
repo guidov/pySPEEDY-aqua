@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 import pytest
 import xarray as xr
 
-from pyspeedy.callbacks import XarrayExporter
-from pyspeedy.speedy import Speedy, SpeedyEns
+from pyspeedyaqua.callbacks import XarrayExporter
+from pyspeedyaqua.speedy import Speedy, SpeedyEns
 
 start_dates = (
     # Run twice the same date to check if the globals variables in the library are modified.
