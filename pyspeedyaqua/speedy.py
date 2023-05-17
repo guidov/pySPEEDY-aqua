@@ -17,14 +17,14 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 import json
 
-from pyspeedy import (
+from pyspeedyaqua import (
     _speedy,  # noqa
     example_bc_file,
     example_sst_anomaly_file,
     PACKAGE_DATA_DIR,
     DEFAULT_OUTPUT_VARS,
 )
-from pyspeedy.error_codes import ERROR_CODES
+from pyspeedyaqua.error_codes import ERROR_CODES
 
 _DEFAULT_PARAMS = dict(
     start_date=datetime(1982, 1, 1),
