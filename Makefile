@@ -6,10 +6,10 @@ all:
 
 .PHONY:clean
 test:	
-	pytest -s -v pyspeedy
+	pytest -s -v pyspeedyaqua
 
 .PHONY:clean
 clean:   
 	$(MAKE) -C speedy.f90 clean
-	@rm -f pyspeedy/*.so
+	@rm -f pyspeedyaqua/*.so
 
