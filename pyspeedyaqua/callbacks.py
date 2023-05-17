@@ -20,11 +20,11 @@ from datetime import datetime
 import os
 
 import xarray as xr
-from pyspeedy import (
+from pyspeedyaqua import (
     _speedy,  # noqa
     DEFAULT_OUTPUT_VARS,
 )
-from pyspeedy.speedy import SpeedyEns, Speedy
+from pyspeedyaqua.speedy import SpeedyEns, Speedy
 
 
 class BaseCallback:
