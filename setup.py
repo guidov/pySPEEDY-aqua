@@ -32,8 +32,8 @@ if SPEEDY_TARGET not in VALID_TARGETS:
     print("Exiting installation.")
     sys.exit(1)
 
-pyspeedy_extension = Extension(
-    name="pyspeedy.speedy_driver",
+pyspeedyaqua_extension = Extension(
+    name="pyspeedyaqua.speedy_driver",
     sources=[
         "speedy.f90/types.f90",
         "speedy.f90/params.f90",
@@ -52,7 +52,7 @@ class specialized_build_ext(build_ext):
     Specialized builder for the speedy model that uses the Makefile.
     """
 
-    special_extension = pyspeedy_extension.name
+    special_extension = pyspeedyaqua_extension.name
 
     def build_extension(self, ext):
         import subprocess
@@ -94,6 +94,6 @@ if __name__ == "__main__":
     export_model_state_json()
 
     setup(
-        ext_modules=[pyspeedy_extension],
+        ext_modules=[pyspeedyaqua_extension],
         cmdclass={"build_ext": specialized_build_ext},
     )
