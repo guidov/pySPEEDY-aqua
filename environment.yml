@@ -1,4 +1,4 @@
-name: pyspeedy_rdt
+name: pyspeedyaqua_rdt
 channels:
   - conda-forge
   - defaults
